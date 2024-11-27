@@ -85,11 +85,21 @@ o	After the build is complete, the production files will be located in the dist/
 ________________________________________
 **Step 7: Troubleshooting Commands**
 1.	If there are issues with dependencies, try installing them with the following command:
+```js
 npm install --legacy-peer-deps
+```
 2.	Change the port (if localhost:4200 is occupied by another service):
+ ```js
 ng serve --port 4300
+```
 3.	Clear npm cache (if there are issues with npm packages):
+```js
 npm cache clean --force
+```
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 
 ### **Project Description: Angular RBAC_UI**
