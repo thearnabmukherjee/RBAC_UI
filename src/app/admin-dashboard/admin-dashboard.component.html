@@ -1,0 +1,36 @@
+<section class="section">
+  <div class="container">
+    <h1 class="title">Admin Dashboard</h1>
+    <button class="button is-primary" (click)="addUser()">Add User</button>
+    <table class="table is-striped is-fullwidth">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.role }}</td>
+          <td>
+            <button class="button is-small is-info" (click)="editUser(user)">Edit</button>
+            <button class="button is-small is-danger" (click)="deleteUser(user.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- User Modal -->
+  <app-user-modal
+    *ngIf="showModal"
+    [isEdit]="isEdit"
+    [userData]="currentUser"
+    (onSave)="saveUser($event)"
+    (onClose)="showModal = false"
+  ></app-user-modal>
+</section>

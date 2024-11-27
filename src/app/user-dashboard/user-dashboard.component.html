@@ -1,0 +1,22 @@
+<section class="section">
+    <div class="container">
+      <h1 class="title">User Dashboard</h1>
+      <div class="box">
+        <p>Your current status: <strong>{{ status }}</strong></p>
+      </div>
+      <div class="field">
+        <label class="label">Update Status</label>
+        <div class="control">
+          <div class="select">
+            <select [(ngModel)]="status" name="status">
+              <option value="Student">Student</option>
+              <option value="Employed">Employed</option>
+              <option value="Unemployed">Unemployed</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <button class="button is-primary" (click)="updateStatus()">Update Status</button>
+    </div>
+  </section>
+  
